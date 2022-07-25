@@ -1,0 +1,55 @@
+// HTTP AUTH/REGISTER
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "phanchauvu",
+    "password": "Chauvuphan92"
+}
+
+###
+// HTTP AUTH/LOGIN
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "phanchauvu",
+    "password": "Chauvuphan92"
+}
+
+###
+// HTTP POSTS
+// GET ALL POSTS
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzNDk4ODk4Nzg4Mzc3YWEwNzA5ZjIiLCJpYXQiOjE2NTI3NzE1MDd9.MSxJYwXgRenmf2QRKQmP_vMneY9VrZ2DJSwf5UYgI7k
+
+###
+// GET CREATE POST
+POST http://localhost:5000/api/posts/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzNDk4ODk4Nzg4Mzc3YWEwNzA5ZjIiLCJpYXQiOjE2NTI3NzE1MDd9.MSxJYwXgRenmf2QRKQmP_vMneY9VrZ2DJSwf5UYgI7k
+
+{
+    "title": "React Native",
+    "description": "Learn React Native",
+    "url": "reactnative.com",
+    "status": "TO LEARN"
+}
+
+###
+// GET UPDATE POST
+PUT http://localhost:5000/api/posts/update/62834b54c8b510616b1ca899
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzNDk4ODk4Nzg4Mzc3YWEwNzA5ZjIiLCJpYXQiOjE2NTI3NzE1MDd9.MSxJYwXgRenmf2QRKQmP_vMneY9VrZ2DJSwf5UYgI7k
+
+{
+    "title": "VueJS",
+    "description": "Vue",
+    "url": "vuex.org",
+    "status": "LEARNING"
+}
+
+###
+// GET DELETE POST
+DELETE http://localhost:5000/api/posts/delete/62834b54c8b510616b1ca899
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzNDk4ODk4Nzg4Mzc3YWEwNzA5ZjIiLCJpYXQiOjE2NTI3NzE1MDd9.MSxJYwXgRenmf2QRKQmP_vMneY9VrZ2DJSwf5UYgI7k
