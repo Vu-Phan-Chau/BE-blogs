@@ -1,12 +1,26 @@
 import Blog from "../models/Blog.js";
-import user from "../models/User.js";
 
 const blogController = {
     getAllBlog: async (req, res) => {
         try {
-            const blogs = await Blog.find({ user: req.userId })
-                .sort({createdAt: -1, updatedAt: -1}).populate('user', 'email')
-            res.json({ success: true, message: 'Get successfully!!!', blogs })
+            const pageNumber = parseInt(req.body.pageNumber) || 0;
+            const limit = 3;
+            const results = {};
+            const totalBlogs = await Blog.countDocuments().exec();
+            let startIndex = pageNumber * limit;
+
+            results.blogs = await Blog.find({ user: req.userId })
+                .sort({createdAt: -1, updatedAt: -1})
+                .skip(startIndex)
+                .limit(limit)
+                .populate('user', 'email')
+                .exec();
+
+            results.rowsPerPage = limit
+            results.totalBlogs = Math.round(totalBlogs / limit)
+            results.pageNumber = pageNumber
+
+            res.json({ success: true, message: 'Get successfully!!!', results })
         } catch (err) {
             console.log(err)
             res.status(500).json({ success: false, message: 'Internal server error' })

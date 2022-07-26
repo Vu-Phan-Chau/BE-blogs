@@ -7,7 +7,7 @@ const router = express.Router()
 // @route GET api/blogs
 // @desc Get blogs
 // @access Private
-router.get('/', verifyToken, blogController.getAllBlog)
+router.post('/', verifyToken, blogController.getAllBlog)
 
 // @route POST api/blogs/create
 // @desc Post blogs
