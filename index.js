@@ -6,9 +6,10 @@ import cors from 'cors'
 import authRouter from './routes/auth.js'
 import postsRouter from './routes/post.js'
 import profileRouter from './routes/profile.js'
-import blogsRouter from "./routes/blog.js";
+import blogsRouter from "./routes/blog.js"
+import categoriesRouter from "./routes/categories.js"
 
-dotenv.config();
+dotenv.config()
 
 // CONNECT DB
 const connectDB = async () => {
@@ -20,7 +21,7 @@ const connectDB = async () => {
         process.exit(1);
     }
 }
-connectDB().then(() => console.log('Connected successfully'));
+connectDB().then();
 
 const app = express()
 app.use(express.json())
@@ -29,7 +30,10 @@ const PORT = process.env.PORT | 4000
 
 app.use('/api/auth', authRouter)
 app.use('/api/profile', profileRouter)
+
 app.use('/api/posts', postsRouter)
 app.use('/api/blogs', blogsRouter)
+
+app.use('/api/categories', categoriesRouter)
 
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`))

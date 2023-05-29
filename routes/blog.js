@@ -24,5 +24,14 @@ router.post('/update/:id', verifyToken, blogController.updateBlog)
 // @access Private
 router.post('/delete/:id', verifyToken, blogController.deleteBlog)
 
+// @route POST api/blogs/detail
+// @desc Post blogs
+// @access Private
+router.post('/detail/:id', verifyToken, blogController.detailBlog)
+
+// @route POST api/blogs/search
+// @desc Post blogs
+// @access Private
+router.post('/query', verifyToken, blogController.queryBlog)
 
 export default router
