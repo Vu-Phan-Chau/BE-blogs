@@ -9,12 +9,12 @@ const verifyToken = (req, res, next) => {
     }
 
     try {
-        const decode = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, {}, null);
-        req.userId = decode.userId;
-        next();
+        const decode = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, {}, null)
+        req.userId = decode.userId
+        next()
     } catch (error) {
-        console.log(error);
-        res.status(403).json({ success: false, message: 'Invalid token' });
+        console.log(error)
+        res.status(403).json({ success: false, message: 'Invalid token' })
     }
 }
 

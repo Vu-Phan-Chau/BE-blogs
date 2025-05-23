@@ -1,31 +1,31 @@
 // HTTP AUTH/REGISTER
-POST http://localhost:5000/api/auth/register
+POST http://localhost:4000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "phanchauvu",
+    "email": "phanchauvu",
     "password": "Chauvuphan92"
 }
 
 ###
 // HTTP AUTH/LOGIN
-POST http://localhost:5000/api/auth/login
+POST http://localhost:4000/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "phanchauvu",
+    "email": "aaa@gmail.com",
     "password": "Chauvuphan92"
 }
 
 ###
 // HTTP POSTS
 // GET ALL POSTS
-GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzNDk4ODk4Nzg4Mzc3YWEwNzA5ZjIiLCJpYXQiOjE2NTI3NzE1MDd9.MSxJYwXgRenmf2QRKQmP_vMneY9VrZ2DJSwf5UYgI7k
+GET http://localhost:4000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ2NzU4ZDA5YzdhNjVkYjExZDE4NzEiLCJpYXQiOjE2ODg2MTc0NzN9._63LNpatxdswh3K-8f3qXB5kZ5-UsIAo-aaxkhoI8FA
 
 ###
 // GET CREATE POST
-POST http://localhost:5000/api/posts/create
+POST http://localhost:4000/api/posts/create
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzNDk4ODk4Nzg4Mzc3YWEwNzA5ZjIiLCJpYXQiOjE2NTI3NzE1MDd9.MSxJYwXgRenmf2QRKQmP_vMneY9VrZ2DJSwf5UYgI7k
 
@@ -38,7 +38,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzN
 
 ###
 // GET UPDATE POST
-PUT http://localhost:5000/api/posts/update/62834b54c8b510616b1ca899
+PUT http://localhost:4000/api/posts/update/62834b54c8b510616b1ca899
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzNDk4ODk4Nzg4Mzc3YWEwNzA5ZjIiLCJpYXQiOjE2NTI3NzE1MDd9.MSxJYwXgRenmf2QRKQmP_vMneY9VrZ2DJSwf5UYgI7k
 
@@ -51,5 +51,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzN
 
 ###
 // GET DELETE POST
-DELETE http://localhost:5000/api/posts/delete/62834b54c8b510616b1ca899
+DELETE http://localhost:4000/api/posts/delete/62834b54c8b510616b1ca899
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjgzNDk4ODk4Nzg4Mzc3YWEwNzA5ZjIiLCJpYXQiOjE2NTI3NzE1MDd9.MSxJYwXgRenmf2QRKQmP_vMneY9VrZ2DJSwf5UYgI7k
+
+###
+// HTTP BLOGS
+// GET ALL BLOGS
+GET http://localhost:4000/api/blogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmQ2NzU4ZDA5YzdhNjVkYjExZDE4NzEiLCJpYXQiOjE2ODg2MTc0NzN9._63LNpatxdswh3K-8f3qXB5kZ5-UsIAo-aaxkhoI8FA

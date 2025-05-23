@@ -2,7 +2,6 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
-
 import authRouter from './routes/auth.js'
 import postsRouter from './routes/post.js'
 import profileRouter from './routes/profile.js'
@@ -14,14 +13,14 @@ dotenv.config()
 // CONNECT DB
 const connectDB = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.qe8k8.mongodb.net/learn-mongodb?retryWrites=true&w=majority`);
+        await mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ji3hfpa.mongodb.net/`);
         console.log('MongoDB connected');
     } catch (error) {
         console.log(error.message);
         process.exit(1);
     }
 }
-connectDB().then();
+connectDB().then()
 
 const app = express()
 app.use(express.json())
